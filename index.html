@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Staging — AI Виртуальный Стейджинг для Агентств Недвижимости</title>
+    <meta name="description"
+        content="Shark Staging — виртуальный стейджинг, AI-ремонт и редизайн интерьеров. Ускоряем продажи недвижимости для агентств. Бесплатный тест — 3 объекта.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="logo-text" style="font-size: 26px;">Shark<span class="logo-accent">Staging</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#stats">Цифры</a>
+                <a href="#process">Процесс</a>
+                <a href="#contact" class="nav-cta">Бесплатный тест</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <video class="hero-video" autoplay loop muted playsinline
+                style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="images/hero-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">AI-Powered Virtual Staging</div>
+            <h1 class="animate-on-scroll">Ускоряем продажи<br><span class="accent-text">недвижимости</span></h1>
+            <p class="hero-sub animate-on-scroll">Виртуальный ремонт, стейджинг и редизайн интерьеров.<br>Для агентств,
+                которые хотят продавать больше и быстрее.</p>
+            <div class="hero-actions animate-on-scroll">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-rocket"></i> Бесплатный тест — 3 объекта
+                </a>
+                <a href="#portfolio" class="btn btn-ghost btn-lg">
+                    <i class="fa-solid fa-images"></i> Примеры работ
+                </a>
+            </div>
+            <div class="hero-trust animate-on-scroll" style="font-size: 18px; margin-top: 24px;">
+                <div class="trust-item"><i class="fa-solid fa-clock"></i> 48 часов</div>
+                <div class="trust-item"><i class="fa-solid fa-shield-check"></i> Фотореализм</div>
+                <div class="trust-item"><i class="fa-solid fa-infinity"></i> Любой стиль</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Листайте вниз</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ==================== PROBLEM ==================== -->
+    <section class="section section-dark" id="problem">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Проблема</span>
+                <h2>83% покупателей <span class="accent-text">пролистывают</span> объявления<br>с плохими фотографиями
+                </h2>
+                <p class="section-desc">Пустые квартиры, черновая отделка, старый ремонт — всё это убивает
+                    кликабельность. Вы теряете лидов ещё до первого звонка.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card animate-on-scroll">
+                    <div class="problem-icon"><i class="fa-solid fa-door-open"></i></div>
+                    <h3>Пустые комнаты</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">Покупатель не может представить, как будет выглядеть
+                        жильё с мебелью</p>
+                </div>
+                <div class="problem-card animate-on-scroll">
+                    <div class="problem-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3>Черновая отделка</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">Бетонные стены и полы отпугивают большинство
+                        потенциальных покупателей</p>
+                </div>
+                <div class="problem-card animate-on-scroll">
+                    <div class="problem-icon"><i class="fa-solid fa-couch"></i></div>
+                    <h3>Устаревший ремонт</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">«Бабушкин» интерьер снижает воспринимаемую стоимость
+                        квартиры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AUDIENCE ==================== -->
+    <section class="section section-gradient" id="audience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Для кого</span>
+                <h2>Три сегмента,<br><span class="accent-text">одно решение</span></h2>
+                <p class="section-desc">Мы помогаем профессионалам рынка недвижимости продавать объекты быстрее и дороже
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Агентства недвижимости</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">Превращаем скучные «вторички» в квартиры мечты.
+                        Увеличиваем кликабельность объявлений и помогаем
+                        забирать эксклюзивы.</p>
+                </div>
+                <div class="service-card service-card-featured animate-on-scroll">
+                    <div class="service-badge">Популярное</div>
+                    <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+                    <h3>Застройщики МКД</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">Показываем готовое жильё вместо голых бетонных стен.
+                        Покупатель влюбляется в образ жизни, а не в
+                        планировку.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3>Малоэтажное строительство</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">Создаём уют в загородных домах и коттеджах.
+                        Демонстрируем потенциал просторных комнат, панорамных
+                        окон и террас.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section section-dark" id="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Решение</span>
+                <h2>Три инструмента<br>для <span class="accent-text">максимальных продаж</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-number">01</div>
+                    <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>AI-Стейджинг</h3>
+                    <p>Виртуальная расстановка мебели в пустых комнатах. Покупатель видит уют — и звонит.</p>
+                    <ul class="service-features">
+                        <li>Любой стиль интерьера</li>
+                        <li>Сохранение геометрии</li>
+                        <li>Фотореалистичный результат</li>
+                    </ul>
+                </div>
+                <div class="service-card service-card-featured animate-on-scroll" style="position: relative;">
+                    <div class="service-number">02</div>
+                    <div class="service-badge" style="z-index: 10;">Популярное</div>
+                    <div class="service-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                    <h3 style="margin-top: 10px;">Виртуальный ремонт</h3>
+                    <p>Превращаем бетон в готовое жильё. Показываем потенциал квартиры без единого рубля на ремонт.
+                    </p>
+                    <ul class="service-features">
+                        <li>Новостройки с нуля</li>
+                        <li>Полная визуализация</li>
+                        <li>Несколько вариантов</li>
+                    </ul>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-number">03</div>
+                    <div class="service-icon"><i class="fa-solid fa-rotate"></i></div>
+                    <h3>Редизайн</h3>
+                    <p>Осовремениваем устаревшие интерьеры. Из «бабушкиного» варианта — в стильное пространство.</p>
+                    <ul class="service-features">
+                        <li>Обновление стиля</li>
+                        <li>Сохранение планировки</li>
+                        <li>Мгновенный вау-эффект</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO (Before/After Slider) ==================== -->
+    <section class="section section-dark" id="portfolio">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Портфолио</span>
+                <h2>Результат говорит<br><span class="accent-text">за себя</span></h2>
+                <p class="section-desc">Потяните ползунок, чтобы увидеть разницу</p>
+            </div>
+            <div class="portfolio-tabs animate-on-scroll">
+                <button class="tab-btn active" data-tab="0">Вторичка (Очистка)</button>
+                <button class="tab-btn" data-tab="1">Вторичка (Стейджинг)</button>
+                <button class="tab-btn" data-tab="2">Новостройки (МКД)</button>
+                <button class="tab-btn" data-tab="3">Загородные дома</button>
+                <button class="tab-btn" data-tab="4">Коммерция</button>
+            </div>
+
+            <div class="portfolio-slider-wrap animate-on-scroll">
+                <div class="ba-slider" id="baSlider">
+                    <div class="ba-before">
+                        <img src="images/Вторичка Авито.jpg" alt="До" id="baBeforeImg">
+                        <div class="ba-label ba-label-before">ДО</div>
+                    </div>
+                    <div class="ba-after" id="baAfterWrap">
+                        <img src="images/Вторичка чистая.jpg" alt="После" id="baAfterImg">
+                        <div class="ba-label ba-label-after">ПОСЛЕ</div>
+                    </div>
+
+                    <div class="ba-handle" id="baHandle">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                        <div class="ba-handle-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дополнительная галерея -->
+            <div class="portfolio-gallery animate-on-scroll" id="portfolioGallery">
+                <!-- Генерируется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="section section-accent" id="stats">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label section-label-light">ROI</span>
+                <h2 class="text-white">Цифры, которые<br><span style="color: #93c5fd;">убеждают</span></h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-value" data-target="240">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Рост кликабельности</div>
+                    <p class="stat-desc">Объявления с AI-визуализацией получают в 2.4 раза больше кликов на
+                        площадках</p>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-value" data-target="45">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Быстрее продажа</div>
+                    <p class="stat-desc">Объекты со стейджингом продаются почти в 2 раза быстрее средних по рынку
+                    </p>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-value" data-target="70">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Снижение торга</div>
+                    <p class="stat-desc">Покупатель видит ценность квартиры и меньше торгуется при просмотре</p>
+                </div>
+            </div>
+            <div class="stats-source animate-on-scroll">
+                <p>По данным NAR (National Association of Realtors), Redfin, BoxBrownie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AI AUDIT ==================== -->
+    <section class="section section-dark" id="audit">
+        <div class="container">
+            <div class="audit-layout">
+                <div class="audit-text animate-on-scroll">
+                    <span class="section-label">Интеллектуальный анализ</span>
+                    <h2>Умный аудит<br><span class="accent-text">ваших объектов</span></h2>
+                    <p>Наши алгоритмы сканируют вашу базу объявлений, выявляя слабые места и скрытый потенциал каждой
+                        квартиры или дома.</p>
+                    <div class="audit-steps">
+                        <div class="audit-step">
+                            <div class="audit-step-num">1</div>
+                            <div>
+                                <strong>Нейрорентген базы</strong>
+                                <span>Бот анализирует фото лотов на площадках</span>
+                            </div>
+                        </div>
+                        <div class="audit-step">
+                            <div class="audit-step-num">2</div>
+                            <div>
+                                <strong>Поиск зон роста</strong>
+                                <span>Находим фото без мебели, с черновой отделкой или визуальным мусором</span>
+                            </div>
+                        </div>
+                        <div class="audit-step">
+                            <div class="audit-step-num">3</div>
+                            <div>
+                                <strong>Точечное решение</strong>
+                                <span>Получаете ссылки на объекты с рекомендациями по упаковке</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audit-visual animate-on-scroll" style="flex: 1.2;">
+                    <div class="audit-card" style="padding: 20px;">
+                        <div class="audit-card-header" style="margin-bottom: 20px;">
+                            <i class="fa-solid fa-robot"></i>
+                            <span style="font-size: 16px;">Shark AI Vision — Результат аудита</span>
+                        </div>
+                        <div class="audit-item" style="margin-bottom: 24px;">
+                            <div style="position: relative; width: 240px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 1px solid var(--border);"
+                                onclick="const afterImg = this.querySelector('.audit-img-after'); afterImg.style.opacity = afterImg.style.opacity === '1' ? '0' : '1';">
+                                <img src="images/Вторичка Авито.jpg" alt="До"
+                                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 0.4s;">
+                                <img src="images/Вторичка чистая.jpg" alt="После" class="audit-img-after"
+                                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 0.4s; opacity: 0;">
+                            </div>
+                            <div class="audit-item-info">
+                                <span class="audit-trigger" style="font-size: 12px; padding: 6px 10px; cursor: pointer;"
+                                    onclick="this.parentElement.previousElementSibling.click()">КЛИКНИ ДЛЯ РЕДИЗАЙНА <i
+                                        class="fa-solid fa-hand-pointer"></i></span>
+                                <p style="font-size: 16px; margin: 8px 0;">Мусор и захламленность</p>
+                                <span class="audit-rec" style="font-size: 14px;">→ Очистка + Стейджинг</span>
+                            </div>
+                        </div>
+                        <div class="audit-item">
+                            <div style="position: relative; width: 240px; height: 160px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 1px solid var(--border);"
+                                onclick="const afterNode2 = this.querySelector('.audit-img-after'); afterNode2.style.opacity = afterNode2.style.opacity === '1' ? '0' : '1';">
+                                <img src="images/Вторичка Ред_before.jpeg" alt="Trigger Before"
+                                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 0.4s;">
+                                <img src="images/Вторичка Ред_after.png" alt="Trigger After" class="audit-img-after"
+                                    style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: 0.4s; opacity: 0;">
+                            </div>
+                            <div class="audit-item-info">
+                                <span class="audit-trigger" style="font-size: 12px; padding: 6px 10px; cursor: pointer;"
+                                    onclick="this.parentElement.previousElementSibling.click()">КЛИКНИ ДЛЯ РЕДИЗАЙНА <i
+                                        class="fa-solid fa-hand-pointer"></i></span>
+                                <p style="font-size: 16px; margin: 8px 0;">Пустая комната без уюта</p>
+                                <span class="audit-rec" style="font-size: 14px;">→ AI-Стейджинг</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS ==================== -->
+    <section class="section section-gradient" id="process">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Процесс</span>
+                <h2>Как мы <span class="accent-text">работаем</span></h2>
+                <p class="section-desc">Оптимизированные алгоритмы для разных задач</p>
+            </div>
+
+            <!-- Процесс: Агентства -->
+            <h3 class="process-title animate-on-scroll" style="margin-top: 120px;">Для Агентств
+                Недвижимости (Вторичка)
+            </h3>
+            <div class="process-grid animate-on-scroll" style="margin-bottom: 50px;">
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <div class="process-num">01</div>
+                    <h3>Передача фото</h3>
+                    <p>Вы скидываете фотографии "как есть" или мы сами берем их из ваших объявлений.</p>
+                </div>
+                <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="process-card">
+                    <div class="process-icon process-icon-accent"><i class="fa-solid fa-broom"></i></div>
+                    <div class="process-num">02</div>
+                    <h3>Очистка и Стейджинг</h3>
+                    <p>ИИ убирает визуальный шум, расставляет стильную мебель, создавая уют за 48 часов.</p>
+                </div>
+                <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="process-card">
+                    <div class="process-icon process-icon-green"><i class="fa-solid fa-upload"></i></div>
+                    <div class="process-num">03</div>
+                    <h3>Публикация</h3>
+                    <p>Готовые рендеры загружаются на площадки, повышая просмотры и конверсию.</p>
+                </div>
+            </div>
+
+            <!-- Процесс: Застройщики -->
+            <h3 class="process-title animate-on-scroll" style="margin-top: 120px;">Для Застройщиков
+                (МКД и Коттеджи)
+            </h3>
+            <div class="process-grid animate-on-scroll">
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="process-num">01</div>
+                    <h3>База для работы</h3>
+                    <p>Получаем от вас фото черновой отделки, рендеры фасадов или планы помещений.</p>
+                </div>
+                <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="process-card">
+                    <div class="process-icon process-icon-accent"><i class="fa-solid fa-hammer"></i></div>
+                    <div class="process-num">02</div>
+                    <h3>Виртуальный ремонт</h3>
+                    <p>Алгоритмы делают "чистовую" отделку, учитывая инсоляцию и точную геометрии.</p>
+                </div>
+                <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="process-card">
+                    <div class="process-icon process-icon-green"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="process-num">03</div>
+                    <h3>Готово к маркетингу</h3>
+                    <p>Внедряйте сочный контент на сайт, буклеты, соцсети и презентации инвесторам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA / CONTACT ==================== -->
+    <section class="section section-cta" id="contact">
+        <div class="container">
+            <div class="cta-layout">
+                <div class="cta-text animate-on-scroll">
+                    <h2 class="text-white">Бесплатный<br><span style="color: #60a5fa;">тест-драйв</span></h2>
+                    <p>Выберите <strong>3 объекта</strong> из вашего портфеля, где визуальная упаковка сможет
+                        раскрыть ценность квартиры и привлечь лидов.</p>
+                    <p>Мы сделаем стейджинг бесплатно. Оцените разницу в кликах и звонках.</p>
+                    <div class="cta-features">
+                        <div class="cta-feature"><i class="fa-solid fa-check"></i> Без обязательств</div>
+                        <div class="cta-feature"><i class="fa-solid fa-check"></i> 48 часов на обработку</div>
+                        <div class="cta-feature"><i class="fa-solid fa-check"></i> Полное коммерческое использование
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-form-wrap animate-on-scroll">
+                    <form class="cta-form" id="contactForm">
+                        <h3>Оставить заявку</h3>
+                        <div class="form-group">
+                            <input type="text" id="formName" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="formPhone" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="formEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="formMessage" placeholder="Сообщение (необязательно)" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">
+                            <i class="fa-solid fa-paper-plane"></i> Отправить заявку
+                        </button>
+                        <p class="form-note">Или позвоните напрямую:</p>
+                        <div class="form-contacts">
+                            <a href="tel:+79173314510" class="form-contact-btn">
+                                <i class="fa-solid fa-phone"></i> 8 (917) 331-45-10
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="logo-text" style="font-size: 24px; margin-bottom: 12px;">Shark<span
+                            class="logo-accent">Staging</span></div>
+                    <p>Виртуальный стейджинг нового поколения<br>для рынка недвижимости</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#portfolio">Портфолио</a>
+                    <a href="#stats">Цифры</a>
+                    <a href="#process">Процесс</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://t.me/RedkinSergeiO" target="_blank" aria-label="Telegram"><i
+                            class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shark Staging. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
