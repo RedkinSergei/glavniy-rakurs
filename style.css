@@ -468,6 +468,24 @@ h3 {
     gap: 24px;
 }
 
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .service-card {
     background: var(--bg-card);
     border: 1px solid var(--border);

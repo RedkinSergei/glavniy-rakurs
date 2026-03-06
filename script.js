@@ -216,25 +216,72 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTab(0);
     }
 
-    // ===== FORM HANDLING =====
+    // ===== FORM HANDLING (TELEGRAM) =====
     const contactForm = document.getElementById('contactForm');
+
+    // ВНИМАНИЕ: Для работы формы заполните эти две переменные:
+    const TG_BOT_TOKEN = 'ВАШ_ТОКЕН_БОТА'; // Например: '123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ'
+    const TG_CHAT_ID = 'ВАШ_ID_ЧАТА';     // Например: '123456789' или '-100123456789'
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Отправка...';
+            btn.style.pointerEvents = 'none';
+
             const name = document.getElementById('formName').value;
             const phone = document.getElementById('formPhone').value;
             const email = document.getElementById('formEmail').value;
             const message = document.getElementById('formMessage').value;
 
-            // Removed window.open redirect to Telegram as requested
-            const btn = contactForm.querySelector('button[type="submit"]');
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> Заявка принята, с вами свяжутся';
-            btn.style.background = '#16a34a';
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Отправить заявку';
-                btn.style.background = '';
-                contactForm.reset();
-            }, 3000);
+            const text = `🔥 *Новая заявка с сайта Shark Staging*\n\n` +
+                `👤 *Имя:* ${name}\n` +
+                `📞 *Телефон:* ${phone}\n` +
+                `📧 *Email:* ${email || 'Не указан'}\n` +
+                `💬 *Сообщение:* ${message || 'Нет сообщения'}`;
+
+            try {
+                if (TG_BOT_TOKEN !== 'ВАШ_ТОКЕН_БОТА') {
+                    const response = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: TG_CHAT_ID,
+                            text: text,
+                            parse_mode: 'Markdown'
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Telegram API error');
+                    }
+                } else {
+                    console.warn("Telegram токен не настроен! Заявка не была отправлена.");
+                }
+
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Заявка отправлена';
+                btn.style.background = '#16a34a';
+                setTimeout(() => {
+                    btn.innerHTML = originalBtnText;
+                    btn.style.background = '';
+                    btn.style.pointerEvents = 'auto';
+                    contactForm.reset();
+                }, 3000);
+            } catch (error) {
+                console.error('Ошибка отправки:', error);
+                btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Ошибка отправки';
+                btn.style.background = '#ef4444';
+                setTimeout(() => {
+                    btn.innerHTML = originalBtnText;
+                    btn.style.background = '';
+                    btn.style.pointerEvents = 'auto';
+                }, 3000);
+            }
         });
     }
 
