@@ -220,8 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
     // ВНИМАНИЕ: Для работы формы заполните эти две переменные:
-    const TG_BOT_TOKEN = 'ВАШ_ТОКЕН_БОТА'; // Например: '123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ'
-    const TG_CHAT_ID = 'ВАШ_ID_ЧАТА';     // Например: '123456789' или '-100123456789'
+    const TG_BOT_TOKEN = '8424813966:AAEU3Ga2Gzok7HxgLdpgQ69uogkw6EcrW54';
+    const TG_CHAT_ID = '153743433';
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('formEmail').value;
             const message = document.getElementById('formMessage').value;
 
-            const text = `🔥 *Новая заявка с сайта Shark Staging*\n\n` +
+            const text = `🔥 *Новая заявка с сайта Главный Ракурс*\n\n` +
                 `👤 *Имя:* ${name}\n` +
                 `📞 *Телефон:* ${phone}\n` +
                 `📧 *Email:* ${email || 'Не указан'}\n` +
