@@ -9,14 +9,14 @@
     --bg-card: #111b33;
     --bg-card-hover: #162040;
     --bg-accent: #1e3a8a;
-    --accent: #3b82f6;
-    --accent-light: #60a5fa;
-    --accent-glow: rgba(59, 130, 246, 0.15);
+    --accent: #10b981;
+    --accent-light: #34d399;
+    --accent-glow: rgba(16, 185, 129, 0.15);
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     --border: rgba(148, 163, 184, 0.1);
-    --border-accent: rgba(59, 130, 246, 0.3);
+    --border-accent: rgba(16, 185, 129, 0.3);
     --radius: 12px;
     --radius-lg: 20px;
     --font-display: 'Space Grotesk', sans-serif;
@@ -101,6 +101,7 @@ h3 {
     font-weight: 800;
     color: white;
     letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .logo-accent {
@@ -114,12 +115,13 @@ h3 {
 }
 
 .nav-links a {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.02em;
     transition: var(--transition);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .nav-links a:hover {
@@ -127,15 +129,15 @@ h3 {
 }
 
 .nav-cta {
-    background: var(--accent) !important;
-    color: white !important;
+    background: #D4A847 !important;
+    color: #0F172A !important;
     padding: 10px 24px !important;
     border-radius: 8px;
     font-weight: 600 !important;
 }
 
 .nav-cta:hover {
-    background: #2563eb !important;
+    background: #ca8a04 !important;
     transform: translateY(-1px);
 }
 
@@ -174,14 +176,14 @@ h3 {
 }
 
 .btn-primary {
-    background: var(--accent);
-    color: white;
-    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.3);
+    background: #D4A847;
+    color: #0F172A;
+    box-shadow: 0 4px 24px rgba(212, 168, 71, 0.3);
 }
 
 .btn-primary:hover {
-    background: #2563eb;
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4);
+    background: #ca8a04;
+    box-shadow: 0 8px 32px rgba(212, 168, 71, 0.4);
     transform: translateY(-2px);
 }
 
@@ -238,7 +240,7 @@ h3 {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(6, 11, 24, 0.98) 0%, rgba(6, 11, 24, 0.90) 50%, rgba(6, 11, 24, 0.85) 100%);
+    background: linear-gradient(135deg, rgba(6, 11, 24, 0.80) 0%, rgba(6, 11, 24, 0.55) 50%, rgba(6, 11, 24, 0.60) 100%);
     z-index: 1;
 }
 
@@ -269,13 +271,15 @@ h3 {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 24px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
 }
 
 .hero-sub {
     font-size: 20px;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 40px;
     line-height: 1.7;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
 }
 
 .hero-actions {
@@ -297,8 +301,9 @@ h3 {
     align-items: center;
     gap: 8px;
     font-size: 16px;
-    color: var(--text-muted);
+    color: var(--text-primary);
     font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 .trust-item i {
@@ -315,8 +320,9 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    color: var(--text-muted);
+    color: var(--text-primary);
     font-size: 13px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 .scroll-arrow {
@@ -439,13 +445,13 @@ h3 {
     width: 64px;
     height: 64px;
     margin: 0 auto 20px;
-    background: rgba(239, 68, 68, 0.1);
+    background: #064E3B;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
-    color: #f87171;
+    color: #10B981;
 }
 
 .problem-card h3 {
@@ -920,7 +926,7 @@ h3 {
 
 .audit-card-header {
     padding: 16px 20px;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(16, 185, 129, 0.1);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
