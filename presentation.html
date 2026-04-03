@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главный Ракурс — Презентация студии</title>
+    <!-- <link rel="icon" type="image/png" href="images/logo.png"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Используем глобальный стиль с изумрудными и золотыми акцентами -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Специфичный стиль для слайдера -->
+    <link rel="stylesheet" href="presentation.css">
+</head>
+
+<body class="presentation-body">
+
+    <!-- Прогресс-бар -->
+    <div class="slide-progress" id="progressBar"></div>
+
+    <!-- Управление -->
+    <div class="slide-controls">
+        <button id="prevBtn" onclick="changeSlide(-1)" disabled><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="nextBtn" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Слайды -->
+    <div id="presentation">
+        
+        <!-- СЛАЙД 1: Титульный -->
+        <section class="slide slide-active">
+            <div class="hero-bg">
+                <video class="hero-video" autoplay loop muted playsinline>
+                    <source src="images/hero-video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Оверлей настроен на яркость: rgba(6, 11, 24, 0.8 / 0.55 / 0.6) -->
+            <div class="hero-overlay"></div>
+            
+            <div class="slide-content text-center">
+                <div class="hero-badge" style="margin-bottom: 30px;">Студия визуальной упаковки недвижимости</div>
+                <h1 style="font-size: clamp(48px, 6vw, 80px); text-shadow: 0 4px 20px rgba(0,0,0,0.8); margin-bottom: 24px;">Главный<br><span style="color: #10B981;">Ракурс</span></h1>
+                <p class="hero-sub" style="font-size: 24px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); max-width: 800px; margin: 0 auto 40px;">
+                    Превращаем пустой бетон и старый ремонт в ликвидный актив за 48 часов с помощью AI-алгоритмов. Ускоряем сделки на 30-50%.
+                </p>
+                <div class="hero-trust" style="justify-content: center;">
+                    <button class="btn btn-primary btn-lg" onclick="changeSlide(1)">Начать просмотр <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 2: Проблема рынка -->
+        <section class="slide slide-dark">
+            <div class="slide-content">
+                <div class="section-header">
+                    <span class="section-label">Проблема</span>
+                    <h2>83% покупателей <span style="color: #10B981;">пролистывают</span> объявления с некачественными фото</h2>
+                </div>
+                
+                <div class="problem-grid" style="margin-top: 60px;">
+                    <div class="problem-card">
+                        <div class="problem-icon"><i class="fa-solid fa-door-open"></i></div>
+                        <h3>Пустые комнаты</h3>
+                        <p>У большинства людей слабое пространственное мышление — они не видят потенциала голых стен.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <h3>Черновая отделка</h3>
+                        <p>Ремонтные работы и стройматериалы отпугивают и усложняют процесс визуализации.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon"><i class="fa-solid fa-couch"></i></div>
+                        <h3>Устаревший ремонт</h3>
+                        <p>Снижает средний чек сделки, заставляет покупателей психологически дисконтировать стоимость актива.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 3: Философия -->
+        <section class="slide slide-gradient">
+            <div class="slide-content">
+                <div class="audit-layout" style="align-items: center; gap: 80px;">
+                    <div class="audit-text">
+                        <span class="section-label">Почему Главный Ракурс?</span>
+                        <h2 style="font-size: 48px; line-height: 1.2; margin-bottom: 30px;">Инвестиции в визуал,<br>а не в бетон</h2>
+                        <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 24px;">Мы не делаем дорогой физический ремонт. Мы используем AI-технологии, чтобы мгновенно показать истинный потенциал объекта.</p>
+                        <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px;">Мы очищаем кадр от мусора, расставляем мебель, настраиваем свет, сохраняя 100% реальной геометрии.</p>
+                        
+                        <div style="padding: 24px; background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10B981; border-radius: 0 12px 12px 0;">
+                            <strong style="font-size: 20px; color: white;">Вы продаете метры. <br>Мы продаем желание в них жить.</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/F1.jpg" alt="Визуализация" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 4: Решения -->
+        <section class="slide slide-dark">
+            <div class="slide-content">
+                <div class="section-header">
+                    <span class="section-label">Как мы решаем задачи</span>
+                    <h2>Три инструмента для <span style="color: #10B981;">максимальных продаж</span></h2>
+                </div>
+                
+                <div class="services-grid" style="margin-top: 50px;">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>AI-Стейджинг</h3>
+                        <p>Виртуальная расстановка мебели в пустых комнатах. Покупатель видит уют — и звонит.</p>
+                    </div>
+                    <div class="service-card service-card-featured">
+                        <div class="service-badge">Популярное</div>
+                        <div class="service-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                        <h3>Виртуальный ремонт</h3>
+                        <p>Превращаем бетон в готовое жильё без единого рубля инвестиций в стройку.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-rotate"></i></div>
+                        <h3>Редизайн</h3>
+                        <p>Избавляем квартиры от "бабушкиного" шарма. Полное осовременивание пространства.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 5: Аудитория -->
+        <section class="slide slide-gradient">
+            <div class="slide-content text-center">
+                <div class="section-header">
+                    <span class="section-label">Для кого</span>
+                    <h2>Решаем боли <span style="color: #10B981;">всех сегментов рынка</span></h2>
+                </div>
+                
+                <div class="audience-grid" style="margin-top: 50px; text-align: left;">
+                    <div class="service-card">
+                        <h3 style="font-size: 20px;">Агентства<br><span style="font-size: 14px; color: #10B981;">Вторичный рынок</span></h3>
+                        <p style="font-size:15px; margin-top:15px;">Избавление от "висяков", быстрая продажа сложных лотов, спасение агентской комиссии.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 style="font-size: 20px;">Застройщики<br><span style="font-size: 14px; color: #10B981;">Новостройки</span></h3>
+                        <p style="font-size:15px; margin-top:15px;">Цифровые шоу-румы вместо бетона. Рост конверсии из визита в бронь.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 style="font-size: 20px;">Инвесторы<br><span style="font-size: 14px; color: #10B981;">B2B и Коммерция</span></h3>
+                        <p style="font-size:15px; margin-top:15px;">Визуализация готового бизнеса (кофейня, IT-офис) для быстрой сдачи помещения.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3 style="font-size: 20px;">Хосты<br><span style="font-size: 14px; color: #10B981;">Посуточная аренда</span></h3>
+                        <p style="font-size:15px; margin-top:15px;">Отельный лоск без ремонта. Квартира выглядит дороже, повышаем чек за сутки.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 6: ROI и конверсия  -->
+        <section class="slide slide-dark" style="background: linear-gradient(135deg, #0c1a3a 0%, #064E3B 100%);">
+            <div class="slide-content text-center">
+                <h2 style="font-size: 56px; margin-bottom: 20px;">Цифры, которые убеждают</h2>
+                <div class="stats-grid" style="margin-top: 60px;">
+                    <div class="stat-card" style="background: rgba(0,0,0,0.3); border:none;">
+                        <div class="stat-value">240<span class="stat-suffix" style="color: #34d399;">%</span></div>
+                        <div class="stat-label">Рост кликабельности (CTR)</div>
+                        <p class="stat-desc">Объявления с AI-визуализацией получают больше показов и кликов.</p>
+                    </div>
+                    <div class="stat-card" style="background: rgba(0,0,0,0.3); border:none;">
+                        <div class="stat-value">45<span class="stat-suffix" style="color: #34d399;">%</span></div>
+                        <div class="stat-label">Ускорение продажи</div>
+                        <p class="stat-desc">Объекты со стейджингом находят покупателя почти в 2 раза быстрее.</p>
+                    </div>
+                    <div class="stat-card" style="background: rgba(0,0,0,0.3); border:none;">
+                        <div class="stat-label" style="font-size: 24px; color: #34d399; margin-bottom: 15px;">Снижение торга</div>
+                        <p class="stat-desc" style="font-size: 16px;">Покупатель изначально видит ценность квартиры и меньше торгуется в моменте.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 7: CTA End -->
+        <section class="slide slide-gradient">
+            <div class="slide-content text-center">
+                <i class="fa-solid fa-rocket" style="font-size: 64px; color: #D4A847; margin-bottom: 30px; text-shadow: 0 0 40px rgba(212,168,71,0.5);"></i>
+                <h2 style="font-size: 60px; margin-bottom: 24px;">Готовы проверить технологию?</h2>
+                <p style="font-size: 22px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px;">
+                    Пришлите нам фото вашего самого сложного или зависшего объекта, и мы сделаем для него Главный Ракурс за 48 часов.
+                </p>
+                
+                <a href="index.html#contact" class="btn btn-primary" style="padding: 24px 60px; font-size: 24px; border-radius: 16px;">
+                    Первый объект — 990 ₽
+                </a>
+
+                <div style="margin-top: 60px; color: var(--text-muted); font-size: 16px;">
+                    <a href="index.html" style="color: #10B981; text-decoration: none;">glavniy-rakurs.ru</a> | 8 (917) 331-45-10
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Скрипт Слайдера -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function initPresentation() {
+            updateSlides();
+            
+            // Навигация с клавиатуры
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+                if(e.key === 'ArrowLeft') changeSlide(-1);
+            });
+            
+            // Свайпы для мобилок
+            let touchstartX = 0;
+            let touchendX = 0;
+            document.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
+            document.addEventListener('touchend', e => {
+                touchendX = e.changedTouches[0].screenX;
+                if (touchstartX - touchendX > 50) changeSlide(1);
+                if (touchendX - touchstartX > 50) changeSlide(-1);
+            });
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if(newSlide >= 0 && newSlide < slides.length) {
+                currentSlide = newSlide;
+                updateSlides();
+            }
+        }
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('slide-active', 'slide-past');
+                if(index === currentSlide) {
+                    slide.classList.add('slide-active');
+                } else if(index < currentSlide) {
+                    slide.classList.add('slide-past');
+                }
+            });
+
+            // Обновляем прогресс бар
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Управление кнопками
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        window.onload = initPresentation;
+    </script>
+</body>
+</html>

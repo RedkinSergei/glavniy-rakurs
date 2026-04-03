@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главный Ракурс — Каталог услуг и цен 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-deep: #060b18;
+            --bg-dark: #0a1128;
+            --bg-card: #111b33;
+            --accent: #10b981;
+            --accent-light: #34d399;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --gold: #D4A847;
+            --gold-light: #e0be6a;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: rgba(148, 163, 184, 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 12pt; }
+        body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; }
+
+        .page {
+            width: 210mm;
+            margin: 0 auto;
+            background: var(--bg-deep);
+            padding: 15mm;
+            position: relative;
+            page-break-after: always;
+            min-height: 297mm;
+            box-sizing: border-box;
+        }
+        .page:last-child { page-break-after: avoid; }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14mm;
+            padding-bottom: 6mm;
+            border-bottom: 1px solid var(--border);
+        }
+        .page-logo-text { font-family: var(--font-display); font-size: 18pt; font-weight: 700; color: white; }
+        .page-logo-text span { color: var(--accent); }
+        .page-number { font-size: 11pt; color: var(--text-muted); }
+
+        h1 { font-family: var(--font-display); font-size: 28pt; font-weight: 700; margin-bottom: 10pt; }
+        h2 { font-family: var(--font-display); font-size: 18pt; font-weight: 600; margin-bottom: 8pt; }
+        h3 { font-family: var(--font-display); font-size: 13pt; font-weight: 600; margin-bottom: 6pt; }
+        p { font-size: 10pt; line-height: 1.5; }
+        .text-accent { color: var(--accent-light); }
+        .section-label { display: inline-block; font-size: 8pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 6pt; }
+
+        .cover { justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, var(--bg-deep) 0%, #0c1a3a 100%); position: relative; }
+        .cover::before { content: ''; position: absolute; inset: 0; background: url('images/F1.jpg') center/cover no-repeat; opacity: 0.12; }
+        .cover > * { position: relative; z-index: 1; }
+        .cover-logo { margin-bottom: 16mm; }
+        .cover-logo-text { font-family: var(--font-display); font-size: 36pt; font-weight: 800; color: white; }
+        .cover-logo-text span { color: var(--accent-light); }
+        .cover h1 { font-size: 36pt; margin-bottom: 8pt; }
+        .cover-subtitle { font-size: 16pt; color: var(--accent-light); font-weight: 500; margin-bottom: 12pt; }
+        .cover-accent-line { width: 100px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); margin: 0 auto 16pt; border-radius: 2px; }
+        .cover-tagline { font-size: 13pt; color: var(--text-secondary); max-width: 400px; margin: 0 auto 24pt; line-height: 1.4; }
+        .cover-footer { position: absolute; bottom: 15mm; left: 15mm; right: 15mm; text-align: center; z-index: 1; }
+        .cover-footer-title { font-size: 11pt; color: var(--text-muted); margin-bottom: 6pt; }
+        .cover-footer-contacts { font-size: 9pt; color: var(--text-muted); line-height: 1.6; }
+        .cover-footer-contacts a { color: var(--accent); text-decoration: none; }
+
+        .divider { height: 1px; background: var(--border); margin: 10pt 0; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12pt; margin-bottom: 10pt; }
+        .card-accent { border-color: var(--accent); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(16, 185, 129, 0.05) 100%); }
+        .card-icon { width: 36px; height: 36px; background: var(--accent-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--accent-light); margin-bottom: 6pt; }
+
+        .steps { display: flex; gap: 10pt; margin: 12pt 0; }
+        .step { flex: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 10pt; text-align: center; }
+        .step-num { width: 26px; height: 26px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11pt; color: white; margin: 0 auto 4pt; }
+        .step h3 { font-size: 9pt; margin-bottom: 2pt; }
+        .step p { font-size: 7pt; color: var(--text-secondary); }
+
+        .audience-list { display: flex; flex-direction: column; gap: 6pt; margin: 10pt 0; }
+        .audience-item { display: flex; align-items: flex-start; gap: 8pt; padding: 8pt 12pt; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); }
+        .audience-icon { font-size: 14pt; flex-shrink: 0; }
+        .audience-item h3 { font-size: 9pt; margin-bottom: 0; }
+        .audience-item p { font-size: 7pt; color: var(--text-secondary); }
+
+        .ba-pair { display: flex; gap: 12pt; margin-bottom: 12pt; }
+        .ba-pair img { flex: 1; height: 160px; object-fit: cover; border-radius: 10px; }
+        .ba-label-sm { font-size: 9pt; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-top: 6pt; text-align: center; }
+        .ba-caption { font-size: 9pt; color: var(--text-secondary); margin-top: 6pt; line-height: 1.4; }
+
+        .pricing-grid { display: flex; flex-direction: column; gap: 6pt; margin: 6pt 0; page-break-inside: avoid; }
+        .pricing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 10pt; position: relative; page-break-inside: avoid; }
+        .pricing-card.featured { border-color: var(--accent); box-shadow: 0 0 20px rgba(16, 185, 129, 0.1); }
+        .pricing-badge { position: absolute; top: -6pt; right: 12pt; background: var(--accent); color: white; font-size: 6pt; font-weight: 700; padding: 2pt 8pt; border-radius: 20px; text-transform: uppercase; }
+        .pricing-card h3 { font-size: 12pt; margin-bottom: 2pt; }
+        .pricing-card .pricing-subtitle { font-size: 8pt; color: var(--accent-light); margin-bottom: 4pt; }
+        .pricing-card .pricing-desc { font-size: 8pt; color: var(--text-secondary); margin-bottom: 8pt; }
+        .pricing-row { display: flex; justify-content: space-between; padding: 4pt 0; border-bottom: 1px solid var(--border); }
+        .pricing-row-name { font-size: 8pt; color: var(--text-secondary); }
+        .pricing-row-price { font-size: 11pt; font-weight: 700; color: var(--accent-light); }
+        .pricing-row-price.gold { color: var(--gold); }
+        .pricing-time { display: flex; align-items: center; gap: 4pt; font-size: 7pt; color: var(--text-muted); margin-top: 6pt; }
+
+        .subs-grid { display: flex; gap: 6pt; margin: 6pt 0; page-break-inside: avoid; }
+        .sub-card { flex: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 8pt; text-align: center; page-break-inside: avoid; }
+        .sub-card.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(16, 185, 129, 0.08) 100%); }
+        .sub-card h3 { font-size: 9pt; margin-bottom: 0; }
+        .sub-card .sub-desc { font-size: 7pt; color: var(--text-muted); margin-bottom: 4pt; }
+        .sub-card .sub-photos { font-size: 9pt; font-weight: 600; color: var(--text-primary); margin-bottom: 4pt; }
+        .sub-card .sub-features { list-style: none; text-align: left; margin-bottom: 6pt; }
+        .sub-card .sub-features li { font-size: 6pt; color: var(--text-secondary); padding: 2pt 0; padding-left: 12pt; position: relative; }
+        .sub-card .sub-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-light); font-weight: 700; }
+        .sub-card .sub-price { font-size: 12pt; font-weight: 700; color: var(--accent-light); }
+        .sub-card .sub-price-sub { font-size: 7pt; color: var(--text-muted); }
+        .sub-card .sub-save { font-size: 7pt; color: var(--gold); margin-top: 4pt; }
+
+        .price-table { width: 100%; margin: 10pt 0; }
+        .price-table-row { display: flex; justify-content: space-between; padding: 5pt 8pt; border-bottom: 1px solid var(--border); }
+        .price-table-row:nth-child(even) { background: rgba(255,255,255,0.02); }
+        .price-table-name { font-size: 8pt; }
+        .price-table-price { font-size: 9pt; font-weight: 700; color: var(--accent-light); }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin: 10pt 0; }
+        .stat-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 8pt; text-align: center; }
+        .stat-value { font-family: var(--font-display); font-size: 20pt; font-weight: 700; color: var(--accent-light); }
+        .stat-label { font-size: 7pt; color: var(--text-secondary); margin-top: 4pt; }
+
+        .promo-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 10pt; margin-bottom: 6pt; border-left: 3px solid var(--accent); }
+        .promo-card.gold { border-left-color: var(--gold); }
+        .promo-card h3 { font-size: 10pt; margin-bottom: 2pt; }
+        .promo-card p { font-size: 8pt; color: var(--text-secondary); }
+
+        .contacts-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12pt; margin: 10pt 0; }
+        .contact-row { display: flex; align-items: center; gap: 8pt; padding: 4pt 0; }
+        .contact-row i { color: var(--accent); width: 14pt; }
+        .contact-row a { color: var(--text-primary); text-decoration: none; }
+        .contact-row span { font-size: 9pt; }
+
+        .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6pt; background: var(--gold); color: #0F172A; padding: 10pt 20pt; border-radius: 8px; font-weight: 700; font-size: 10pt; text-decoration: none; border: none; width: 100%; margin: 8pt 0; }
+
+        .disclaimer { font-size: 7pt; color: var(--text-muted); line-height: 1.4; margin-top: auto; padding-top: 8pt; border-top: 1px solid var(--border); }
+
+        @media print {
+            @page { size: A4; margin: 0; }
+            body { background: var(--bg-deep) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            html { background: var(--bg-deep) !important; }
+            .page { 
+                width: 100%; 
+                margin: 0; 
+                background: var(--bg-deep) !important; 
+                background-color: var(--bg-deep) !important;
+                padding: 15mm 16mm;
+                min-height: 100vh;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page:last-child { page-break-after: avoid; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+        @media screen { .page { margin: 10px auto; box-shadow: 0 5px 30px rgba(0,0,0,0.5); } }
+    </style>
+</head>
+
+<body>
+
+    <!-- СТРАНИЦА 1: ОБЛОЖКА -->
+    <div class="page cover">
+        <div class="cover-logo">
+            <div class="cover-logo-text">Главный<span class="text-accent">Ракурс</span></div>
+        </div>
+        <div class="cover-subtitle">AI Хоумстейджинг</div>
+        <div class="cover-accent-line"></div>
+        <p class="cover-tagline">Покажем, как будет выглядеть ваша квартира — за 24 часа</p>
+        <p style="font-size: 11pt; color: var(--text-muted);">AI-визуализация интерьеров для продажи, аренды и ремонта.<br>Без выезда. По всей России.</p>
+        <div class="cover-footer">
+            <div class="cover-footer-title">Каталог услуг и цен — 2026</div>
+            <div class="cover-footer-contacts">
+                <a href="https://wa.me/79173314510">WhatsApp: 8 (917) 331-45-10</a><br>
+                <a href="https://t.me/RedkinSergeiO">Telegram: @RedkinSergeiO</a><br>
+                <a href="https://redkinsergei.github.io/glavniy-rakurs/">Наш сайт</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- СТРАНИЦА 2: О СЕРВИСЕ -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">1 / 6</div>
+        </div>
+        <span class="section-label">О сервисе</span>
+        <h2>Что мы делаем</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 10pt;">Вы присылаете фото квартиры — мы превращаем его в продающую визуализацию с помощью AI. Покажем потенциал пустой квартиры. Преобразим устаревший интерьер. Визуализируем результат ремонта ещё до его начала.</p>
+
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><h3>Присылаете фото</h3><p>Отправьте фото комнат в WhatsApp или Telegram.</p></div>
+            <div class="step"><div class="step-num">2</div><h3>AI создаёт визуализацию</h3><p>Создаём варианты интерьера до реалистичного результата.</p></div>
+            <div class="step"><div class="step-num">3</div><h3>Получаете результат</h3><p>Через 24–72 часа — готовые изображения для объявления.</p></div>
+        </div>
+
+        <div class="divider"></div>
+        <h3 style="margin-bottom: 8pt;">Кому это нужно</h3>
+        <div class="audience-list">
+            <div class="audience-item"><div class="audience-icon">🏠</div><div><h3>Продаёте квартиру</h3><p>Квартиры с визуализацией продаются быстрее и дороже.</p></div></div>
+            <div class="audience-item"><div class="audience-icon">🔑</div><div><h3>Сдаёте в аренду</h3><p>Визуальные объявления получают в 2–3 раза больше откликов.</p></div></div>
+            <div class="audience-item"><div class="audience-icon">🏗️</div><div><h3>Черновая отделка</h3><p>Покажем результат ремонта до начала работ.</p></div></div>
+            <div class="audience-item"><div class="audience-icon">🏢</div><div><h3>Застройщик</h3><p>Визуализация планировок для сайта и шоу-рума.</p></div></div>
+            <div class="audience-item"><div class="audience-icon">👔</div><div><h3>Риелтор</h3><p>Выделите объекты среди сотен одинаковых объявлений.</p></div></div>
+        </div>
+        <div class="disclaimer">Все изображения являются AI-визуализациями.</div>
+    </div>
+
+    <!-- СТРАНИЦА 3: ПРАЙС-ЛИСТ -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">2 / 6</div>
+        </div>
+        <span class="section-label">Стоимость</span>
+        <h2>Основные услуги</h2>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+                    <div class="card-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                    <div><h3 style="margin-bottom: 0;">Редизайн</h3><div class="pricing-subtitle">Для вторички</div></div>
+                </div>
+                <div class="pricing-row"><span class="pricing-row-name">Студия / 1-к · 7 фото</span><span class="pricing-row-price">2 000 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">2-к квартира · 12 фото</span><span class="pricing-row-price">3 500 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">3-к квартира · 15 фото</span><span class="pricing-row-price">4 500 ₽</span></div>
+                <div class="pricing-time">24–48 часов</div>
+            </div>
+
+            <div class="pricing-card featured">
+                <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+                    <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div><h3 style="margin-bottom: 0;">⭐ Стейджинг «С нуля»</h3><div class="pricing-subtitle">Для пустых квартир</div></div>
+                </div>
+                <div class="pricing-row"><span class="pricing-row-name">Студия / 1-к · 7 фото</span><span class="pricing-row-price">3 500 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">2-к квартира · 12 фото</span><span class="pricing-row-price">6 000 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">3-к квартира · 15 фото</span><span class="pricing-row-price">7 500 ₽</span></div>
+                <div class="pricing-time">24–72 часа</div>
+            </div>
+
+            <div class="pricing-card">
+                <div style="display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt;">
+                    <div class="card-icon" style="background: rgba(212,168,71,0.15); color: var(--gold);"><i class="fa-solid fa-rocket"></i></div>
+                    <div><h3 style="margin-bottom: 0;">Продай быстрее</h3></div>
+                </div>
+                <div class="pricing-row"><span class="pricing-row-name">Студия / 1-к · 7 фото + текст</span><span class="pricing-row-price gold">3 000 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">2-к квартира · 12 фото + текст</span><span class="pricing-row-price gold">4 500 ₽</span></div>
+                <div class="pricing-row"><span class="pricing-row-name">3-к квартира · 15 фото + текст</span><span class="pricing-row-price gold">5 500 ₽</span></div>
+                <div class="pricing-time">48–72 часа</div>
+            </div>
+        </div>
+        <p style="font-size: 7pt; color: var(--text-muted); margin-top: 4pt;">Точная стоимость — после оценки.</p>
+        <div class="disclaimer">AI-визуализации не являются фото.</div>
+    </div>
+
+    <!-- СТРАНИЦА 3: ПОДПИСКИ -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">3 / 6</div>
+        </div>
+        <span class="section-label">Стоимость</span>
+        <h2>Поштучные услуги</h2>
+        <div class="price-table">
+            <div class="price-table-row"><span class="price-table-name">Виртуальный стейджинг · 1 фото</span><span class="price-table-price">700 ₽</span></div>
+            <div class="price-table-row"><span class="price-table-name">Виртуальный редизайн · 1 фото</span><span class="price-table-price">400 ₽</span></div>
+            <div class="price-table-row"><span class="price-table-name">Визуализация черновой · 1 фото</span><span class="price-table-price">800 ₽</span></div>
+            <div class="price-table-row"><span class="price-table-name">Удаление мебели · 1 фото</span><span class="price-table-price">300 ₽</span></div>
+            <div class="price-table-row"><span class="price-table-name">Доп. вариант стиля</span><span class="price-table-price">250 ₽</span></div>
+            <div class="price-table-row"><span class="price-table-name">Продающий текст объявления</span><span class="price-table-price">1 500 ₽</span></div>
+        </div>
+
+        <div class="divider"></div>
+        <h2 style="font-size: 14pt;">Подписки для риелторов</h2>
+        <div class="subs-grid">
+            <div class="sub-card">
+                <h3>Старт</h3><div class="sub-desc">Для частных риелторов</div>
+                <div class="sub-photos">10 фото / мес</div>
+                <ul class="sub-features"><li>Стейджинг, редизайн, черновая</li><li>Срок 24–48ч</li><li>Перенос остатков</li></ul>
+                <div class="sub-price">3 500 ₽</div><div class="sub-price-sub">/ месяц</div><div class="sub-save">Экономия до 40%</div>
+            </div>
+            <div class="sub-card featured">
+                <h3>⭐ Бизнес</h3><div class="sub-desc">Для активных агентов</div>
+                <div class="sub-photos">30 фото / мес</div>
+                <ul class="sub-features"><li>Стейджинг, редизайн, черновая</li><li>Приоритет 12ч</li><li>Персональный чат</li></ul>
+                <div class="sub-price">9 000 ₽</div><div class="sub-price-sub">/ месяц</div><div class="sub-save">Экономия до 50%</div>
+            </div>
+            <div class="sub-card">
+                <h3>Агентство</h3><div class="sub-desc">Для АН</div>
+                <div class="sub-photos">80 фото / мес</div>
+                <ul class="sub-features"><li>Стейджинг, редизайн, черновая</li><li>Приоритет 6ч</li><li>Личный менеджер</li></ul>
+                <div class="sub-price">20 000 ₽</div><div class="sub-price-sub">/ месяц</div><div class="sub-save">Экономия до 60%</div>
+            </div>
+        </div>
+        <div class="disclaimer">AI-визуализации не являются фото реальных интерьеров.</div>
+    </div>
+
+    <!-- СТРАНИЦА 4: ПОРТФОЛИО -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">4 / 6</div>
+        </div>
+        <span class="section-label">Портфолио</span>
+        <h2>Результат говорит сильнее слов</h2>
+
+        <div class="ba-pair"><div><img src="images/Вторичка Авито.jpg" alt="До" style="height: 90px;"><div class="ba-label-sm">ДО</div></div><div><img src="images/Вторичка чистая.jpg" alt="После" style="height: 90px;"><div class="ba-label-sm">ПОСЛЕ</div></div></div>
+        <div class="ba-caption">Вторичка · Редизайн — Устаревший интерьер → современный скандинавский стиль.</div>
+
+        <div class="ba-pair" style="margin-top: 4pt;"><div><img src="images/Вторичка Ред_before.jpeg" alt="До" style="height: 90px;"><div class="ba-label-sm">ДО</div></div><div><img src="images/Вторичка Ред_after.png" alt="После" style="height: 90px;"><div class="ba-label-sm">ПОСЛЕ</div></div></div>
+        <div class="ba-caption">Пустая комната · AI-меблировка — Голые стены → стильное пространство с мебелью.</div>
+
+        <div class="ba-pair" style="margin-top: 4pt;"><div><img src="images/Цех 1.jpeg" alt="До" style="height: 90px;"><div class="ba-label-sm">ДО</div></div><div><img src="images/Цех 2.png" alt="После" style="height: 90px;"><div class="ba-label-sm">ПОСЛЕ</div></div></div>
+        <div class="ba-caption">Черновая отделка · Виртуальный ремонт — Голые стены → готовый интерьер.</div>
+
+        <div class="ba-pair" style="margin-top: 4pt;"><div><img src="images/Kom1.jpg" alt="До" style="height: 90px;"><div class="ba-label-sm">ДО</div></div><div><img src="images/Kom1.1.jpg" alt="После" style="height: 90px;"><div class="ba-label-sm">ПОСЛЕ</div></div></div>
+        <div class="ba-caption">Коммерция · Офис — Пустое помещение → современный IT-офис.</div>
+    </div>
+
+    <!-- СТРАНИЦА 5: ПОРТФОЛИО 2 -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">5 / 6</div>
+        </div>
+        <span class="section-label">Портфолио</span>
+        <h2>Результат говорит сильнее слов</h2>
+
+        <div class="ba-pair" style="gap: 10pt; margin-bottom: 10pt; margin-top: 8pt;"><div><img src="images/S1.jpg" alt="До" style="height: 150px; width: 100%;"><div class="ba-label-sm">ДО</div></div><div><img src="images/S1.1.jpg" alt="После" style="height: 150px; width: 100%;"><div class="ba-label-sm">ПОСЛЕ</div></div></div>
+        <div class="ba-caption">Новостройка · Виртуальный ремонт — Бетонная коробка → готовая квартира.</div>
+
+        <div class="divider"></div>
+        <h3 style="text-align: center; margin-bottom: 10pt;">Почему это работает</h3>
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-value">×2</div><div class="stat-label">Больше откликов на объявление</div></div>
+            <div class="stat-item"><div class="stat-value">+15%</div><div class="stat-label">Выше предложение покупателя</div></div>
+            <div class="stat-item"><div class="stat-value">24ч</div><div class="stat-label">Среднее время выполнения</div></div>
+            <div class="stat-item"><div class="stat-value">−60</div><div class="stat-label">Дней сокращение экспозиции</div></div>
+        </div>
+        <div class="disclaimer">AI-визуализации не являются фото реальных интерьеров.</div>
+    </div>
+
+    <!-- СТРАНИЦА 6: КОНТАКТЫ -->
+    <div class="page">
+        <div class="page-header">
+            <div class="page-logo-text">Главный<span>Ракурс</span></div>
+            <div class="page-number">6 / 6</div>
+        </div>
+        <span class="section-label">Специальные предложения</span>
+        <h2>Начните сегодня</h2>
+
+        <div class="promo-card"><h3>🎁 Первый заказ — 990 ₽</h3><p>Пришлите фото вашего объекта — сделаем Главный Ракурс за 48 часов.</p></div>
+        <div class="promo-card gold"><h3>💸 Скидка 30% первым 10 клиентам</h3><p>Количество мест ограничено.</p></div>
+        <div class="promo-card"><h3>🤝 Партнёрская программа</h3><p>20% комиссия за каждого приведённого клиента.</p></div>
+
+        <div class="divider"></div>
+        <h2 style="font-size: 14pt;">Свяжитесь с нами</h2>
+        <div class="contacts-block">
+            <div class="contact-row"><i class="fa-solid fa-phone"></i><span><a href="https://wa.me/79173314510">8 (917) 331-45-10</a></span></div>
+            <div class="contact-row"><i class="fa-brands fa-telegram"></i><span><a href="https://t.me/RedkinSergeiO">@RedkinSergeiO</a></span></div>
+            <div class="contact-row"><i class="fa-solid fa-globe"></i><span><a href="https://redkinsergei.github.io/glavniy-rakurs/">Наш сайт</a></span></div>
+            <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span>г. Волгоград · Работаем по всей России</span></div>
+        </div>
+
+        <p style="text-align: center; font-size: 9pt; color: var(--text-secondary);">Пришлите фото — покажем результат за 24 часа. Первый заказ — 990 ₽.</p>
+
+        <div class="disclaimer">
+            © 2026 «Главный Ракурс». Все права защищены.<br>
+            Все изображения являются AI-визуализациями и не являются фото реальных интерьеров.
+        </div>
+    </div>
+
+</body>
+</html>

@@ -216,12 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTab(0);
     }
 
-    // ===== FORM HANDLING (TELEGRAM) =====
+    // ===== FORM HANDLING (EMAIL) =====
     const contactForm = document.getElementById('contactForm');
-
-    // ВНИМАНИЕ: Для работы формы заполните эти две переменные:
-    const TG_BOT_TOKEN = '8424813966:AAEU3Ga2Gzok7HxgLdpgQ69uogkw6EcrW54';
-    const TG_CHAT_ID = '153743433';
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -237,31 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('formEmail').value;
             const message = document.getElementById('formMessage').value;
 
-            const text = `🔥 *Новая заявка с сайта Главный Ракурс*\n\n` +
-                `👤 *Имя:* ${name}\n` +
-                `📞 *Телефон:* ${phone}\n` +
-                `📧 *Email:* ${email || 'Не указан'}\n` +
-                `💬 *Сообщение:* ${message || 'Нет сообщения'}`;
-
             try {
-                if (TG_BOT_TOKEN !== 'ВАШ_ТОКЕН_БОТА') {
-                    const response = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            chat_id: TG_CHAT_ID,
-                            text: text,
-                            parse_mode: 'Markdown'
-                        })
-                    });
+                const response = await fetch('send.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, email, message })
+                });
 
-                    if (!response.ok) {
-                        throw new Error('Telegram API error');
-                    }
-                } else {
-                    console.warn("Telegram токен не настроен! Заявка не была отправлена.");
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error(result.error || 'Ошибка отправки');
                 }
 
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> Заявка отправлена';

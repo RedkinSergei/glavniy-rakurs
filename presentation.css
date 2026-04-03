@@ -1,0 +1,131 @@
+/* ============================== */
+/* SHARK STAGING — PRESENTATION   */
+/* ============================== */
+
+body.presentation-body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+
+#presentation {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-deep);
+}
+
+.slide {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+    background: var(--bg-deep);
+}
+
+.slide.slide-active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    z-index: 10;
+}
+
+.slide.slide-past {
+    transform: translateX(-100px);
+}
+
+.slide-dark { background: var(--bg-dark); }
+.slide-gradient { background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-dark) 100%); }
+
+.slide-content {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.text-center { text-align: center; }
+.mt-4 { margin-top: 32px; }
+.mb-2 { margin-bottom: 16px; }
+
+/* Навигация по слайдам */
+.slide-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.slide-controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.slide-controls button:hover:not(:disabled) {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.slide-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slide-progress {
+    position: fixed;
+    bottom: 0; left: 0;
+    height: 4px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+/* ============================== */
+/* PRINT STYLES FOR PDF EXPORT    */
+/* ============================== */
+@media print {
+    body.presentation-body {
+        overflow: visible;
+        max-height: none;
+        background: var(--bg-deep); /* dark background for PDF */
+    }
+    #presentation {
+        height: auto;
+        position: relative;
+    }
+    .slide {
+        position: relative !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+        break-after: page;
+        height: 100vh;
+        width: 100vw;
+        padding: 40px;
+    }
+    .slide-controls, .slide-progress {
+        display: none !important;
+    }
+    /* Убедиться, что фоны печатаются */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
